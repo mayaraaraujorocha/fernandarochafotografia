@@ -173,9 +173,14 @@ Criar uma **landing page limpa, emocional e fofa** para Fernanda Rocha Fotografi
 ## 9. Footer
 
 ### Estrutura
-- 4 colunas:
+
   1. Logo + descrição: Fernanda Rocha Fotografia de Família
-  2. Navegação: Sobre, Portfólio, Contato
+  2. Navegação:Header,hero,Sobre mim,video,
+categorias de foto(album em modal)
+Depoimentos
+mapa do endereço
+call to action
+footer
   3. Serviços: Listar categorias
   4. Informações de contato: Endereço, WhatsApp, Instagram, Facebook
 
