@@ -18,8 +18,6 @@ import { useTestimonialsTypingEffect } from '../hooks/useTestimonialsTypingEffec
 import { 
   FaHeart, 
   FaBaby, 
-  FaUsers, 
-  FaBriefcase, 
   FaBirthdayCake,
   FaRing,
   FaCamera,

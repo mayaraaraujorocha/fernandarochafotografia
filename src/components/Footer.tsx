@@ -5,7 +5,7 @@
  * Estrutura 4 colunas: Logo + descrição, Navegação, Serviços, Contato
  */
 
-import { FaInstagram, FaFacebook, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
 
 export function Footer() {
   const scrollToSection = (sectionId: string) => {
