@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Imagens - Unsplash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .category {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .category h2 {
+            color: #8DA4D0;
+            margin-top: 0;
+        }
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .image-container {
+            position: relative;
+            padding-bottom: 100%;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .image-container img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .status {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .success { background: rgba(76, 175, 80, 0.8) !important; }
+        .error { background: rgba(244, 67, 54, 0.8) !important; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste de Imagens do Unsplash</h1>
+    <p>Verificando se todas as URLs das categorias estão funcionando...</p>
+    
+    <div id="results"></div>
+
+    <script>
+        // Copiar a lógica do generatePlaceholderPhotos
+        const photoIds = {
+            couple: [
+                '1516589178581-6cd7833ae3b2',
+                '1573496359142-b8d87734a5a2',
+                '1518568814500-bf0f8d125f46',
+            ],
+            pregnant: [
+                '1555252333-9f8e92e65df9',
+                '1519689680058-324335c77eba',
+                '1555252333-9f8e92e65df9',
+            ],
+            family: [
+                '1511895426328-dc8714191300',
+                '1609220136736-443140cffec6',
+                '1475503572774-15a45e5d60b9',
+            ],
+            newborn: [
+                '1515488042361-ee00e0ddd4e4',
+                '1555252333-9f8e92e65df9',
+                '1515488042361-ee00e0ddd4e4',
+            ],
+            wedding: [
+                '1519741497674-611481863552',
+                '1606800052052-a08af7148866',
+                '1519741497674-611481863552',
+            ],
+        };
+
+        function generateURL(id) {
+            return `https://images.unsplash.com/photo-${id}?w=800&h=600&fit=crop&q=80&auto=format`;
+        }
+
+        const resultsDiv = document.getElementById('results');
+
+        Object.entries(photoIds).forEach(([category, ids]) => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'category';
+            
+            const title = document.createElement('h2');
+            title.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            categoryDiv.appendChild(title);
+
+            const imagesDiv = document.createElement('div');
+            imagesDiv.className = 'images';
+
+            ids.forEach((id, index) => {
+                const url = generateURL(id);
+                const container = document.createElement('div');
+                container.className = 'image-container';
+
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = `${category} ${index + 1}`;
+
+                const status = document.createElement('div');
+                status.className = 'status';
+                status.textContent = '⏳ Loading...';
+
+                img.onload = () => {
+                    status.textContent = '✅ OK';
+                    status.classList.add('success');
+                };
+
+                img.onerror = () => {
+                    status.textContent = '❌ Error';
+                    status.classList.add('error');
+                    console.error('Failed to load:', url);
+                };
+
+                container.appendChild(img);
+                container.appendChild(status);
+                imagesDiv.appendChild(container);
+            });
+
+            categoryDiv.appendChild(imagesDiv);
+            resultsDiv.appendChild(categoryDiv);
+        });
+    </script>
+</body>
+</html>

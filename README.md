@@ -1,73 +1,133 @@
-# React + TypeScript + Vite
+# 📸 Fernanda Rocha Fotografia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page profissional para fotógrafa especializada em ensaios de família, gestante, newborn e eventos. Site single-page otimizado com React 19.2 + TypeScript + Vite.
 
-Currently, two official plugins are available:
+**Status**: ✅ Código 100% Completo | ⏳ Aguardando Conteúdo Real
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Instalar dependências
+npm install
 
-## Expanding the ESLint configuration
+# Desenvolvimento
+npm run dev
+# Abrir: http://localhost:5174
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Build de produção
+npm run build
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview do build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📖 Documentação
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **[QUICKSTART.md](QUICKSTART.md)** - Guia completo de setup e deploy (começar aqui)
+- **[REFERENCE.md](REFERENCE.md)** - Especificações técnicas e referências
+- **[designer.md](designer.md)** - Design original e diretrizes
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 19.2** - Framework
+- **TypeScript 5.9** - Type safety
+- **Vite 7.2** - Build tool & dev server
+- **GSAP** - Animações e scroll effects
+- **React Icons** - Ícones (Font Awesome)
+
+---
+
+## 📁 Estrutura do Projeto
+
 ```
+src/
+├── components/        # Componentes reutilizáveis
+│   ├── Header.tsx     # Menu + navegação
+│   ├── Footer.tsx     # Rodapé completo
+│   ├── ServiceCard.tsx # Cards de categoria
+│   └── Modal.tsx      # Modal de álbuns
+├── pages/
+│   └── Home.tsx       # Página principal (todas as 8 seções)
+└── hooks/
+    └── useScrollAnimations.ts  # GSAP ScrollTrigger
+
+public/images/         # Assets (116 imagens necessárias)
+scripts/               # Scripts automatizados
+```
+
+---
+
+## ✅ O Que Fazer Agora
+
+1. **Atualizar placeholders** (5 min):
+   ```bash
+   ./scripts/update-placeholders.sh
+   ```
+
+2. **Adicionar imagens** (4-8h):
+   - Ver especificações em [REFERENCE.md](REFERENCE.md#image-specs)
+   - Mínimo: 34 imagens essenciais
+
+3. **Deploy** (5 min):
+   - Ver instruções em [QUICKSTART.md](QUICKSTART.md#fase-3-deploy-5-minutos)
+   - Recomendado: Vercel (deploy automático)
+
+---
+
+## 🧪 Scripts Disponíveis
+
+```bash
+npm run dev           # Dev server (http://localhost:5174)
+npm run build         # Build de produção
+npm run preview       # Preview do build
+npm run lint          # ESLint
+
+# Scripts automatizados
+./scripts/update-placeholders.sh     # Atualizar WhatsApp/redes sociais
+./scripts/pre-deploy-check.sh        # Verificar se está pronto para deploy
+```
+
+---
+
+## 📦 Features
+
+- ✅ 8 seções completas (Hero, Sobre, Vídeo, Portfólio, Depoimentos, Mapa, CTA, Footer)
+- ✅ 11 categorias de serviço com modais de álbum (10 fotos cada)
+- ✅ Menu hambúrguer responsivo mobile
+- ✅ Botão flutuante WhatsApp
+- ✅ Animações GSAP com ScrollTrigger
+- ✅ Smooth scroll entre seções
+- ✅ Integração WhatsApp em múltiplos CTAs
+- ✅ Totalmente responsivo (mobile, tablet, desktop)
+- ✅ TypeScript strict mode
+- ✅ Build otimizado (~440KB)
+
+---
+
+## 🎨 Sistema de Design
+
+**Cores**: `#8DA4D0` (azul), `#F5C7C9` (rosa), `#333333` (texto)  
+**Tipografia**: Playfair Display (headings) + Inter (body)  
+**Layout**: Single-page scroll com 8 seções
+
+Ver especificações completas em [designer.md](designer.md).
+
+---
+
+## 📱 Deploy
+
+**Recomendado**: Vercel (deploy automático via GitHub)
+
+Ver guia completo em [QUICKSTART.md](QUICKSTART.md#fase-3-deploy-5-minutos) ou [REFERENCE.md](REFERENCE.md#deploy).
+
+---
+
+## 📄 Licença
+
+Proprietary - © 2026 Fernanda Rocha Fotografia
