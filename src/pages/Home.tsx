@@ -728,6 +728,23 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <style>
+{`
+@media (max-width: 1024px) {
+  .editorial-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    height: auto !important;
+  }
+
+  .editorial-grid > div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+`}
+</style>
+
         </section>
 
         {/* Depoimentos - designer.md §6 */}
@@ -1631,12 +1648,13 @@ function generatePlaceholderPhotos(count: number, category: string): string[] {
       'IMG_3712.jpg',
     ],
     pregnant: [
+       'IMG_2544.jpg',
       '1008.jpg',
       '1032.jpg',
       '1053.jpg',
       '1057.jpg',
       '1058.jpg',
-      'IMG_2544.jpg',
+     
       'IMG_2555.jpg',
       'IMG_4004.jpg',
       'IMG_5568.jpg',
