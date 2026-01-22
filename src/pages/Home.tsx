@@ -60,171 +60,63 @@ export default function Home() {
       <StarDecoration position="right" top="70vh" color="blue" size="large" delay={0.5} />
       <StarDecoration position="right" top="95vh" color="pink" size="medium" delay={2.0} />
 
-      {/* Hero - Tutu School Style */}
-      <section
-        id="hero"
+     
+  {/* Hero */}
+<section
+  id="hero"
+  style={{
+    height: 'calc(100vh - 5rem)',
+    position: 'relative',
+    backgroundImage: 'url(/images/hero/hero-background.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'right center', // bebês para o lado direito
+    backgroundRepeat: 'no-repeat',
+  }}
+>
+  {/* Overlay leve */}
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      background: 'rgba(255, 255, 255, 0.4)',
+    }}
+  />
+
+  {/* Frase à esquerda */}
+  <div
+    style={{
+      position: 'relative',
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: 'clamp(2rem, 6vw, 5rem)',
+      maxWidth: '600px',
+      zIndex: 2,
+    }}
+  >
+    <h1
+      style={{
+        fontFamily: 'var(--font-heading)',
+        fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+        fontWeight: 600,
+        color: 'rgb(76, 90, 116)',
+        lineHeight: '1.1',
+      }}
+    >
+      Vamos criar{' '}
+      <span
         style={{
-          padding: '0',
-          backgroundColor: '#FFFFFF',
-          height: 'calc(100vh - 5rem)',
+          fontFamily: 'var(--font-script)',
+          fontWeight: 400,
         }}
       >
-        <div style={{ height: '100%' }}>
-          <div
-            className="hero-section"
-            style={{
-              height: '100%',
-              display: 'flex',
-              alignItems: 'flex-end',
-              justifyContent: 'flex-start',
-              position: 'relative',
-              backgroundImage: 'url(/images/hero/hero-background.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center top',
-              backgroundRepeat: 'no-repeat',
-              overflow: 'hidden',
-              padding: 'clamp(2rem, 5vw, 4rem)',
-            }}
-          >
-            {/* Overlay azul suave - alinhado com princípio 'cores claras, design suave' */}
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(135deg, rgba(141, 164, 208, 0.5), rgba(141, 164, 208, 0.4))',
-              }}
-            />
+        memórias juntos?
+      </span>
+    </h1>
+  </div>
+ 
+</section>
 
-            {/* Título à esquerda superior - Tutu Style */}
-            <div
-              style={{
-                position: 'absolute',
-                top: 'clamp(6rem, 15vh, 10rem)',
-                left: 'clamp(2rem, 5vw, 4rem)',
-                zIndex: 10,
-                color: '#FFFFFF',
-                maxWidth: '600px',
-              }}
-            >
-              <h1
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
-                  fontWeight: 600,
-                  marginBottom: 0,
-                  color: 'rgb(76, 90, 116)', 
-                  lineHeight: 'var(--leading-tight)',
-                  letterSpacing: '0.02em',
-                }}
-              >
-                Eternizando{' '}
-                <span style={{ fontFamily: 'var(--font-script)', fontWeight: 400, fontSize: '1.1em' }}>momentos especiais</span>
-              </h1>
-            </div>
-
-            {/* Card Flutuante Branco - Tutu Style (Esquerda Inferior) */}
-            <div
-              style={{
-                position: 'relative',
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-xl)',
-                padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-                maxWidth: '480px',
-                width: '100%',
-                boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
-                zIndex: 20,
-                marginBottom: 'clamp(2rem, 5vh, 3rem)',
-              }}
-              className="hero-card"
-            >
-          
-              
-              <p
-                style={{
-                  fontSize: 'var(--font-base)',
-                  lineHeight: 1.6,
-                  marginBottom: 'var(--space-6)',
-                  color: 'var(--neutral-700)',
-                }}
-              >
-                Transformo seu amor em arte há{' '}
-                <strong style={{ color: 'var(--blue-600)' }}>15 anos</strong>. Fotos que sua
-                família vai guardar por gerações.
-              </p>
-
-              {/* Trust Badges Row */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(2, 1fr)',
-                  gap: 'var(--space-4)',
-                  marginBottom: 'var(--space-8)',
-                  padding: 'var(--space-4) 0',
-                  borderTop: '1px solid var(--neutral-200)',
-                  borderBottom: '1px solid var(--neutral-200)',
-                }}
-              >
-                <div style={{ textAlign: 'center', padding: '0 var(--space-2)' }}>
-                  <div
-                    style={{
-                      fontSize: 'clamp(1.75rem, 4vw, 2rem)',
-                      fontWeight: 700,
-                      color: 'var(--blue-600)',
-                      marginBottom: 'var(--space-1)',
-                      lineHeight: 1,
-                    }}
-                  >
-                    15+
-                  </div>
-                  <div style={{ fontSize: 'clamp(0.65rem, 1.5vw, 0.75rem)', color: 'var(--neutral-600)', lineHeight: 1.3 }}>
-                    Anos de Experiência
-                  </div>
-                </div>
-                <div style={{ textAlign: 'center', padding: '0 var(--space-2)', borderLeft: '1px solid var(--neutral-200)' }}>
-                  <div
-                    style={{
-                      fontSize: 'clamp(1.75rem, 4vw, 2rem)',
-                      fontWeight: 700,
-                      color: 'var(--blue-600)',
-                      marginBottom: 'var(--space-1)',
-                      lineHeight: 1,
-                    }}
-                  >
-                    ❤️
-                  </div>
-                  <div style={{ fontSize: 'clamp(0.65rem, 1.5vw, 0.75rem)', color: 'var(--neutral-600)', lineHeight: 1.3 }}>
-                    Mãe & Fotógrafa
-                  </div>
-                </div>
-              </div>
-              
-              <Button
-                variant="primary"
-                href="https://wa.me/5511919009824?text=Olá! Gostaria de agendar uma sessão de fotos."
-                target="_blank"
-                fullWidth
-              >
-                Agendar Sessão
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Responsive CSS para card */}
-        <style>
-          {`
-            @media (max-width: 768px) {
-              .hero-card {
-                position: relative !important;
-                bottom: auto !important;
-                left: auto !important;
-                margin-top: var(--space-10);
-                max-width: 100% !important;
-              }
-            }
-          `}
-        </style>
-      </section>
 
       {/* Faixa Animada de Categorias - Tutu School Style */}
       <section 
@@ -1648,13 +1540,12 @@ function generatePlaceholderPhotos(count: number, category: string): string[] {
       'IMG_3712.jpg',
     ],
     pregnant: [
-       'IMG_2544.jpg',
       '1008.jpg',
       '1032.jpg',
       '1053.jpg',
       '1057.jpg',
       '1058.jpg',
-     
+      'IMG_2544.jpg',
       'IMG_2555.jpg',
       'IMG_4004.jpg',
       'IMG_5568.jpg',
