@@ -3,11 +3,8 @@
  * Estrelas decorativas animadas nas laterais do site
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface StarDecorationProps {
   position: 'left' | 'right';
@@ -33,88 +30,43 @@ export function StarDecoration({ position, top, color, size = 'medium', delay = 
 
   useEffect(() => {
     if (!starRef.current) return;
-
     const star = starRef.current;
 
-    // Animação de rotação contínua suave
-    gsap.to(star, {
-      rotation: 360,
-      duration: 25,
-      repeat: -1,
-      ease: 'none',
-    });
+    // Ensure star is visible immediately
+    star.style.visibility = 'visible';
 
-    // Efeito de "flash de foto" - aparece e desaparece como um flash
-    const flashAnimation = () => {
-      const timeline = gsap.timeline({
-        repeat: -1,
-        repeatDelay: Math.random() * 1.5 + 0.5, // Delay aleatório entre 0.5-2s (frequência aumentada)
-      });
+    // Intentionally run GSAP for side stars even when global toggle is off
+    // to restore the decorative behavior requested.
+    // Dynamically import GSAP and run animations
+    (async () => {
+      const gsapModule = (await import('gsap')).default as any;
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      gsapModule.registerPlugin(ScrollTrigger);
 
-      timeline
-        .fromTo(
-          star,
-          {
-            opacity: 0,
-            scale: 0.3,
-          },
-          {
-            opacity: 0.9,
-            scale: 1.1,
-            duration: 0.2,
-            ease: 'power2.out',
-          }
-        )
-        .to(star, {
-          opacity: 0.7,
-          scale: 1,
-          duration: 0.3,
-          ease: 'power1.inOut',
-        })
-        .to(star, {
-          opacity: 0.8,
-          scale: 1.05,
-          duration: 1.5,
-          ease: 'sine.inOut',
-        })
-        .to(star, {
-          opacity: 0,
-          scale: 0.8,
-          duration: 0.4,
-          ease: 'power2.in',
-        });
+      // Rotação contínua
+      gsapModule.to(star, { rotation: 360, duration: 25, repeat: -1, ease: 'none' });
 
-      return timeline;
-    };
+      const flashAnimation = () => {
+        const timeline = gsapModule.timeline({ repeat: -1, repeatDelay: Math.random() * 1.5 + 0.5 });
+        timeline
+          .fromTo(star, { opacity: 0, scale: 0.3 }, { opacity: 0.9, scale: 1.1, duration: 0.2, ease: 'power2.out' })
+          .to(star, { opacity: 0.7, scale: 1, duration: 0.3, ease: 'power1.inOut' })
+          .to(star, { opacity: 0.8, scale: 1.05, duration: 1.5, ease: 'sine.inOut' })
+          .to(star, { opacity: 0, scale: 0.8, duration: 0.4, ease: 'power2.in' });
+        return timeline;
+      };
 
-    // Inicia com delay baseado na prop delay
-    gsap.delayedCall(delay, () => {
-      flashAnimation();
-    });
+      gsapModule.delayedCall(delay, () => { flashAnimation(); });
 
-    // Scroll trigger apenas para ativar a visibilidade inicial
-    ScrollTrigger.create({
-      trigger: star,
-      start: 'top bottom-=100',
-      onEnter: () => {
-        star.style.visibility = 'visible';
-      },
-    });
+      ScrollTrigger.create({ trigger: star, start: 'top bottom-=100', onEnter: () => { star.style.visibility = 'visible'; } });
 
-    // Flutuação sutil enquanto visível
-    gsap.to(star, {
-      y: '+=10',
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      delay: delay * 0.3,
-    });
+      gsapModule.to(star, { y: '+=10', duration: 4, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: delay * 0.3 });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.killTweensOf(star);
-    };
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill());
+        gsapModule.killTweensOf(star);
+      };
+    })();
   }, [delay]);
 
   return (

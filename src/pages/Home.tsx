@@ -61,72 +61,82 @@ export default function Home() {
       <StarDecoration position="right" top="95vh" color="pink" size="medium" delay={2.0} />
 
      
-  {/* Hero */}
-<section
-  id="hero"
-  style={{
-    height: 'calc(100vh - 5rem)',
-    position: 'relative',
-    backgroundImage: 'url(/images/hero/hero-background.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'right center', // bebês para o lado direito
-    backgroundRepeat: 'no-repeat',
-  }}
->
-  {/* Overlay leve */}
-  <div
-    style={{
-      position: 'absolute',
-      inset: 0,
-      background: 'rgba(255, 255, 255, 0.4)',
-    }}
-  />
-
-  {/* Frase à esquerda */}
-  <div
-    style={{
-      position: 'relative',
-      height: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      paddingLeft: 'clamp(2rem, 6vw, 5rem)',
-      maxWidth: '600px',
-      zIndex: 2,
-    }}
-  >
-    <h1
-      style={{
-        fontFamily: 'var(--font-heading)',
-        fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
-        fontWeight: 600,
-        color: 'rgb(76, 90, 116)',
-        lineHeight: '1.1',
-      }}
-    >
-      Vamos criar{' '}
-      <span
+      {/* Hero */}
+      <section
+        id="hero"
+        className="hero-section"
         style={{
-          fontFamily: 'var(--font-script)',
-          fontWeight: 400,
-        }}
-      >
-        memórias juntos?
-      </span>
-    </h1>
-  </div>
- 
-</section>
-
-
-      {/* Faixa Animada de Categorias - Tutu School Style */}
-      <section 
-        style={{ 
-          padding: 'clamp(0.5rem, 1.25vw, 1rem) 0',
-          backgroundColor: '#FFFFFF',
-          overflow: 'hidden',
+          height: 'calc(100vh - 5rem)',
           position: 'relative',
         }}
       >
+        {/* Overlay leve */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(255, 255, 255, 0.4)',
+          }}
+        />
+
+        {/* Frase - agora posicionada no topo (texto em cima) */}
+        <div
+          className="hero-content"
+          style={{
+            position: 'relative',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'flex-start',
+            paddingTop: 'clamp(2rem, 6vw, 4.5rem)',
+            paddingLeft: 'clamp(1.25rem, 4vw, 5rem)',
+            maxWidth: '720px',
+            zIndex: 2,
+          }}
+        >
+          <h1
+            className="hero-title"
+            style={{
+              fontFamily: 'var(--font-heading)',
+              // increased font-size to make hero headline more prominent
+              // new clamp: min 2.5rem, fluid 6.5vw, max 6rem
+              fontSize: 'clamp(2.5rem, 6.5vw, 6rem)',
+              fontWeight: 600,
+              color: 'rgb(76, 90, 116)',
+              lineHeight: '1.1',
+            }}
+          >
+            Vamos criar
+            {/* optional break visible only on desktop via CSS */}
+            <br className="hero-break" />
+            <span
+              style={{
+                fontFamily: 'var(--font-script)',
+                fontWeight: 400,
+              }}
+            >
+              memórias juntos?
+            </span>
+          </h1>
+        </div>
+        {/* hero title responsive spacing: only apply left offset on larger viewports */}
+        <style>{`
+          .hero-title { margin-left: clamp(0.75rem, 6vw, 130px); }
+          @media (max-width: 968px) {
+            .hero-title { margin-left: 0 !important; }
+          }
+        `}</style>
+      </section>
+
+
+      {/* Faixa Animada de Categorias - Tutu School Style */}
+        <section 
+          style={{ 
+            padding: '0',
+                        overflow: 'hidden',
+            position: 'relative',
+            height: '64px',
+          }}
+        >
         <div 
           className="categories-marquee"
           style={{
@@ -137,122 +147,88 @@ export default function Home() {
         >
           {/* Primeiro conjunto de categorias */}
           <div style={{ display: 'flex', gap: 'var(--space-20)', alignItems: 'center' }}>
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>casais</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>gestantes</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>famílias</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>newborn</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>smash the cake</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>casamento</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>aniversário</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Casais</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Gestantes</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Newborn</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Smash the Cake</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Batizado</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Nascimento</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Casamento</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Aniversário</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Eventos Corporativos</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Ensaios de Família</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Ensaios Infantis</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Ensaios de Aniversário</span>
           </div>
 
           {/* Segundo conjunto (duplicado para loop infinito) */}
           <div style={{ display: 'flex', gap: 'var(--space-20)', alignItems: 'center' }}>
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>casais</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>gestantes</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>famílias</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>newborn</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>smash the cake</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>casamento</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
-            
-            <span style={{ 
-              fontFamily: 'var(--font-script)', 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              color: '#8DA4D0',
-              fontWeight: 400,
-            }}>aniversário</span>
-            <span style={{ fontSize: '2rem', color: '#8DA4D0' }}>✦</span>
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Casais</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Gestantes</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Newborn</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Smash the Cake</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Batizado</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Nascimento</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Casamento</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Aniversário</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Eventos Corporativos</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Ensaios de Família</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Ensaios Infantis</span>
+            <span style={{ fontSize: '1.25rem', color: '#8DA4D0' }}>✦</span>
+
+            <span style={{ fontFamily: 'var(--font-script)', color: '#8DA4D0', fontWeight: 400 }}>Ensaios de Aniversário</span>
           </div>
         </div>
+
+        <style>{`
+          .categories-marquee { display:flex; align-items:center; height:64px; }
+          .categories-marquee > div { display:flex; gap: var(--space-20); align-items:center; }
+          /* Increase font-size by ~7px from the previous value; keep responsive clamp. */
+          .categories-marquee span { font-size: 2rem !important; color: #8DA4D0; line-height:1; }
+        `}</style>
+
       </section>
 
       {/* Sobre Mim - designer.md §3 */}
@@ -272,19 +248,7 @@ export default function Home() {
             </h2>
             
             {/* Texto de Introdução Centralizado */}
-            <p style={{
-              textAlign: 'center',
-              maxWidth: '800px',
-              margin: '0 auto',
-              marginBottom: 'clamp(2rem, 4vw, 3rem)',
-              fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-              lineHeight: 1.6,
-              color: '#6B7280',
-            }}>
-              Fundada com amor em 2010, Fernanda Rocha Fotografia é dedicada a capturar momentos especiais de famílias. Acreditamos que cada família merece experimentar a alegria de preservar suas memórias em um ambiente acolhedor e mágico.
-            </p>
-            
+                      
             <div
               className="story-grid"
               style={{
@@ -583,7 +547,7 @@ export default function Home() {
               <div style={{ gridColumn: '1', gridRow: '6 / 8' }}>
                 <ServiceCard
                   icon={FaGift}
-                  title="Eventos de Nascimento"
+                  title="Nascimento"
                   description="Chá de bebê, chá revelação e celebrações da chegada do bebê."
                   photos={generatePlaceholderPhotos(10, 'baby-shower')}
                 />
@@ -593,7 +557,7 @@ export default function Home() {
               <div style={{ gridColumn: '2', gridRow: '6 / 8' }}>
                 <ServiceCard
                   icon={FaRing}
-                  title="Eventos de Casamento"
+                  title="Casamento"
                   description="Do pedido ao grande dia, cada detalhe do seu casamento registrado."
                   photos={generatePlaceholderPhotos(10, 'wedding')}
                 />
@@ -603,7 +567,7 @@ export default function Home() {
               <div style={{ gridColumn: '1 / 3', gridRow: '8 / 10' }}>
                 <ServiceCard
                   icon={FaStar}
-                  title="Eventos de Aniversário"
+                  title="Aniversário"
                   description="Festas de aniversário com toda alegria e celebração."
                   photos={generatePlaceholderPhotos(10, 'birthday')}
                 />
@@ -1182,7 +1146,7 @@ export default function Home() {
                     paddingLeft: 'calc(1.5rem + var(--space-3))',
                   }}
                 >
-                  O ideal é entre 5 e 15 dias de vida, quando o bebê ainda mantém aquelas posições delicadas e dorme profundamente. Mas não se preocupe, faço ensaios lindos com bebês de qualquer idade!
+                  O ideal é  20 dias de vida, quando o bebê ainda mantém aquelas posições delicadas e dorme profundamente. Mas não se preocupe, faço ensaios lindos com bebês de qualquer idade!
                 </p>
               </details>
 
@@ -1401,8 +1365,8 @@ export default function Home() {
                         fontFamily: 'var(--font-body)',
                         fontSize: '0.95rem',
                       }}>
-                        WhatsApp: (11) 99999-9999<br />
-                        contato@fernandarochafotografia.com.br
+                        WhatsApp: (11) 91900-9824<br />
+                      
                       </p>
                     </div>
                   </div>
@@ -1454,7 +1418,8 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundPosition: '50% 0%',
             position: 'relative',
-            minHeight: '60vh',
+            /* Increased by ~50px as requested */
+            minHeight: 'calc(70vh + 50px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -1479,18 +1444,7 @@ export default function Home() {
               color: '#FFFFFF',
             }}
           >
-            <h2
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                marginBottom: 'var(--spacing-lg)',
-                textShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                color: '#FFFFFF',
-              }}
-            >
-              Vamos{' '}
-              <span style={{ fontFamily: 'var(--font-script)', fontWeight: 400, fontSize: '1.1em' }}>criar memórias juntos?</span>
-            </h2>
+         
             <p
               style={{
                 fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
@@ -1624,7 +1578,7 @@ function generatePlaceholderPhotos(count: number, category: string): string[] {
     'birthday-shoot': [
       'capa.jpg',
       '1019.jpg',
-      '1023.jpg',
+      
       '1045.jpg',
       '1046.jpg',
       'IMG_6100.jpg',

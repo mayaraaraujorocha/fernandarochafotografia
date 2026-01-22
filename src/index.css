@@ -256,6 +256,51 @@ img {
   padding: 0 var(--spacing-lg);
 }
 
+/* Hero background images: mobile uses default hero-background.jpg; desktop uses hero-bebes-desktop.jpg */
+.hero-section {
+  /* mobile: use hero-bebes-desktop.jpg as requested (inverted) */
+  background-image: url('/images/hero/hero-bebes-desktop.jpg');
+  background-size: cover;
+  background-position: center center; /* center image on mobile */
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 969px) {
+  /* desktop: use the original hero-background.jpg (inverted) */
+  .hero-section {
+    background-image: url('/images/hero/hero-background.jpg');
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding-top: clamp(3rem, 6vw, 6rem) !important;
+    /* center hero content on desktop */
+    align-items: center !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+}
+
+/* Reduce hero height on small screens so it doesn't dominate the viewport */
+@media (max-width: 480px) {
+  .hero-section {
+    height: calc(55vh - 3.5rem) !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-section {
+    height: calc(65vh - 4rem) !important;
+  }
+}
+
+/* show the optional break only on desktop; hide on mobile */
+.hero-break { display: none; }
+@media (min-width: 969px) {
+  .hero-break { display: block; line-height: 1.15; }
+}
+
 /* Seção Padrão */
 section {
   margin: 0;
@@ -423,9 +468,11 @@ section:nth-child(even) {
     padding: 0 var(--spacing-md);
   }
 
-  /* Hero ajustes mobile */
+  /* Hero ajustes mobile: texto no topo e padding reduzido */
+  html { font-size: 14px; } /* reduz tipografia geral no mobile */
+
   .hero-section {
-    align-items: flex-end !important;
+    align-items: flex-start !important;
     padding: 1.5rem !important;
   }
 
@@ -505,6 +552,13 @@ section:nth-child(even) {
   /* Seção Sobre Mim mobile */
   #sobre > div > div {
     grid-template-columns: 1fr !important;
+  }
+
+  /* Centralizar a imagem da seção "Minha história" no mobile */
+  .story-image-column {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   /* Mapa mobile */

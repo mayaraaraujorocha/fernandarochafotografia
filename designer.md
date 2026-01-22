@@ -281,50 +281,32 @@ Card 11: col 2-4, row 10-12 (horizontal 21:9, full-width)
    - Próximo da Estação Vila Sônia
    - 5 minutos da Rodovia Raposo Tavares
    
-3. **Contato** (FaWhatsapp rosa):
+   3. **Contato** (FaWhatsapp rosa):
    - WhatsApp: (11) 99999-9999
    - Email: contato@fernandarochafotografia.com.br
- ⭐ GSAP IMPLEMENTADO
+ ⭐ GSAP REMOVIDO — o site foi convertido para uma versão estática (animações JS desativadas)
 
-### Scroll Animations ✅ (`useScrollAnimations.ts` hook)
-**GSAP ScrollTrigger configurado**:
-- **Fade up**: Elementos aparecem com `opacity: 0 → 1` e `y: 30 → 0`
-- **Stagger**: Delay entre elementos (0.15s)
-- **Trigger**: `start: "top 80%"` (ativa quando elemento entra 80% da viewport)
-- **Toggle actions**: `play none none reverse` (anima ao entrar e sair)
+### Scroll Animations — REMOVIDAS
+As animações de rolagem baseadas em JavaScript (GSAP / ScrollTrigger) foram desativadas para esta entrega. O projeto entrega um comportamento estático onde:
+- Elementos aparecem sem animação JS ao entrarem na viewport.
+- Se for necessário, efeitos leves podem ser aplicados apenas via transições CSS (sem bibliotecas runtime).
 
-**Elementos animados**:
-- Títulos de seções (h2)
-- Parágrafos
-- Cards de serviços
-- Depoimentos
-- Imagens
+Nota: Os hooks e arquivos relacionados a animação (`useScrollAnimations.ts`, `use*ScrollEffect.ts`) foram mantidos no repositório por compatibilidade, mas não são ativados/importados por padrão nesta configuração estática.
 
-### Hover Effects ✅ (GSAP + CSS)
-**Cards de serviços** (GSAP):
-- Card: `translateY(-8px)` + sombra
-- Imagem: `scale(1.08)`
-- Overlay: Escurece
-- Título: `scale(1.05)` com bounce
-
-**Botões** (CSS transitions):
-- Primary: `translateY(-2px)` + sombra colorida
-- Secondary: Preenchimento suave
-- Duração: 0.3s ease
-
-**Ícones de localização** (GSAP inline):
-- Rotações e translações sutis
-- Scale 1.15 no hover
+### Hover Effects ✅ (CSS apenas — GSAP removido)
+Os efeitos de hover são implementados somente com CSS (transforms e transitions). Não há animações JS em execução.
+- Cards de serviços: transform e box-shadow aplicados via `:hover` com `transition` CSS (ex.: `transform: translateY(-6px);`).
+- Imagens: `scale()` leve via CSS em hover com `transition`.
+- Botões: pequenas transições CSS (translate, box-shadow) com duração ~0.3s.
+- Ícones: efeitos simples por CSS (não há rotacionamentos animados via JS).
 
 ### Marquee Animation ✅ (CSS @keyframes)
 **Faixa de categorias**:
-- Loop infinito horizontal
-- Duração: 60s linear
-- Duplicação de conteúdo para loop seamless
+- Implementada apenas com CSS `@keyframes` (sem GSAP). Pode ser desativada facilmente comentando a regra CSS se o cliente preferir sem movimento.
 
 ### Smooth Scroll ✅
 - `scroll-behavior: smooth` no CSS
-- `element.scrollIntoView({ behavior: 'smooth' })` no JS
+- `element.scrollIntoView({ behavior: 'smooth' })` no JS (sem animações adicionais)
 
 ---
 
@@ -376,10 +358,7 @@ Card 11: col 2-4, row 10-12 (horizontal 21:9, full-width)
 - **Total**: 8 estrelas (4 esquerda, 4 direita)
 - **Cores**: Alternadas azul/rosa
 - **Tamanhos**: small/medium/large
-- **Animações GSAP**:
-  - Fade in com delay staggered
-  - Float vertical sutil (yoyo infinito)
-  - Rotation aleatória
+- **Animação**: REMOVIDA (GSAP desativado) — as estrelas permanecem estáticas nesta versão. Se desejado, efeitos muito leves podem ser recriados com transições CSS simples.
 - **Posição**: Absolute, fixed left/right
 - **Responsivo**: Hidden no mobile para performance
 
@@ -448,7 +427,7 @@ Card 11: col 2-4, row 10-12 (horizontal 21:9, full-width)
 - **Lazy loading**: Imagens com `loading="lazy"`
 - **Optimized images**: WebP placeholder, dimensões corretas
 - **Code splitting**: React.lazy potencial (não implementado)
-- **GSAP**: Apenas animações que rodam na GPU (transform, opacity)
+- **GSAP**: REMOVIDO — nenhuma biblioteca de animação em runtime; a versão atual prioriza comportamento estático e transições CSS leves quando necessário.
 
 ### Acessibilidade ✅
 - **Semantic HTML**: Uso correto de tags (header, nav, section, footer)
@@ -552,7 +531,8 @@ Esta landing page **implementada** entrega:
 - **Inline styles** (no CSS modules)
 
 ### Animations
-- **GSAP 3** (ScrollTrigger)
+### Animations
+- Nenhuma biblioteca de animação em runtime (GSAP removido) — comportamento estático / transições CSS apenas
 
 ### Icons
 - **React Icons** (FaIcons)
@@ -638,7 +618,8 @@ footer
   - Botões
   - Cards
 - Rolagem suave habilitada
-- Usar GSAP para animações
+ - Rolagem suave habilitada
+ - GSAP removido; site entregue em versão estática. Para futuros refinamentos, considerar micro-interações em CSS puro ou reativar GSAP apenas em áreas específicas mediante aprovação do cliente.
 
 ---
 

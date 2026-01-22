@@ -18,8 +18,8 @@ export function WhatsAppFloat() {
         bottom: 'var(--spacing-lg)',
         right: 'var(--spacing-lg)',
         zIndex: 1000,
-        width: '60px',
-        height: '60px',
+        width: '80px',
+        height: '80px',
         borderRadius: '50%',
         backgroundColor: '#25D366',
         display: 'flex',
@@ -41,7 +41,7 @@ export function WhatsAppFloat() {
     >
       <FaWhatsapp
         style={{
-          fontSize: '2rem',
+          fontSize: '3rem',
           color: '#FFFFFF',
         }}
       />
