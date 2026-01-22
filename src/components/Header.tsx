@@ -110,7 +110,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              backgroundColor: '#F5C7C9',
+              backgroundColor: '#8DA4D0',
               color: '#FFFFFF',
               padding: '0.875rem 2rem',
               borderRadius: '50px',
@@ -126,12 +126,12 @@ export function Header() {
               gap: '0.5rem',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#F0B5B8';
+              e.currentTarget.style.backgroundColor = '#7089B8';
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(245, 199, 201, 0.3)';
+              e.currentTarget.style.boxShadow = '0 4px 12px #4A5A85';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#F5C7C9';
+              e.currentTarget.style.backgroundColor = '#8DA4D0';
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = 'none';
             }}
