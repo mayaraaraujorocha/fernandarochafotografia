@@ -685,28 +685,37 @@ export default function Home() {
                 {/* Citação */}
                 <p
                   className="testimonial-text"
-                  data-text='"As fotos ficaram simplesmente maravilhosas! A Fernanda conseguiu capturar a essência da nossa família de uma forma tão natural e emocionante. Cada detalhe foi registrado com muito carinho e profissionalismo."'
+                  data-text='"Fer, obrigada pelo ensaio maravilhoso! 💕
+Obrigada pelo carinho, pelo amor e pelas fotos incríveis! 
+Tô chorando de novo,sim!! 😂❣️
+
+Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesquecível. Cada foto tem um pedacinho do nosso amor - e eu não canso de olhar! 📸✨ Você é incrível "'
                   style={{
                     fontSize: 'var(--font-base)',
-                    lineHeight: 1.8,
+                    lineHeight: 1.7,
                     marginBottom: 'var(--space-8)',
                     fontStyle: 'italic',
                     color: 'var(--neutral-700)',
                   }}
                 >
-                  "As fotos ficaram simplesmente maravilhosas! A Fernanda conseguiu capturar a essência da nossa família de uma forma tão natural e emocionante. Cada detalhe foi registrado com muito carinho e profissionalismo."
+                  "Fer, obrigada pelo ensaio maravilhoso! 💕
+Obrigada pelo carinho, pelo amor e pelas fotos incríveis! 
+Tô chorando de novo,sim!! 😂❣️
+
+Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesquecível. Cada foto tem um pedacinho do nosso amor - e eu não canso de olhar! 📸✨ Você é incrível 
+"
                 </p>
 
                 {/* Cliente */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
                   <div style={{ position: 'relative' }}>
                     <img
-                      src="https://i.pravatar.cc/100?img=5"
-                      alt="Ana Paula Silva"
+                      src="/../public/images/about/depoimentos-livia.jpeg"
+                      alt="Lívia Cavalcante"
                       style={{
                         width: '60px',
                         height: '60px',
-                        borderRadius: '50%',
+                        borderRadius: '20%',
                         objectFit: 'cover',
                       }}
                     />
@@ -716,14 +725,14 @@ export default function Home() {
                         position: 'absolute',
                         inset: '-4px',
                         border: '3px solid rgba(245, 199, 201, 0.9)',
-                        borderRadius: '50%',
+                        borderRadius: '20%',
                         pointerEvents: 'none',
                       }}
                     />
                   </div>
                   <div>
                     <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
-                      Ana Paula Silva
+                     Lívia Cavalcante 
                     </p>
                     <p style={{ fontSize: 'var(--font-sm)', color: 'var(--neutral-600)' }}>
                       Ensaio de Família
@@ -734,7 +743,7 @@ export default function Home() {
                 {/* Link Google Reviews */}
                 <div style={{ marginTop: 'var(--space-4)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--neutral-200)' }}>
                   <a
-                    href="https://www.google.com/maps/place/Fernanda+Rocha+Fotografia"
+                    href="https://www.instagram.com/livccavalcante/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -755,7 +764,7 @@ export default function Home() {
                       e.currentTarget.style.gap = '0.375rem';
                     }}
                   >
-                    Ver no Google Reviews →
+                    Ver no Instagram →
                   </a>
                 </div>
               </div>
@@ -801,28 +810,28 @@ export default function Home() {
                 {/* Citação */}
                 <p
                   className="testimonial-text"
-                  data-text='"Experiência incrível do início ao fim! A Fernanda é extremamente atenciosa e dedicada. As fotos do newborn do nosso filho superaram todas as expectativas. Recomendo de olhos fechados!"'
+                  data-text='"Fernanda Rocha não tenho palavras para definir seu trabalho , Você é mais que uma fotógrafa é uma artista que contagia o ambiente e deixa tudo mais leve Obrigada por capturar sorrisos espontâneos e eternizar sentimentos que reviveremos para sempre,a sua sensibilidade e carinho conosco foram ímpares, Deus te abençoe muito que você tenha muito sucesso 🥰"'
                   style={{
                     fontSize: 'var(--font-base)',
-                    lineHeight: 1.8,
+                    lineHeight: 1.7,
                     marginBottom: 'var(--space-8)',
                     fontStyle: 'italic',
                     color: 'var(--neutral-700)',
                   }}
                 >
-                  "Experiência incrível do início ao fim! A Fernanda é extremamente atenciosa e dedicada. As fotos do newborn do nosso filho superaram todas as expectativas. Recomendo de olhos fechados!"
+                  "Fernanda Rocha não tenho palavras para definir seu trabalho , Você é mais que uma fotógrafa é uma artista que contagia o ambiente e deixa tudo mais leve Obrigada por capturar sorrisos espontâneos e eternizar sentimentos que reviveremos para sempre,a sua sensibilidade e carinho conosco foram ímpares, Deus te abençoe muito que você tenha muito sucesso 🥰"
                 </p>
 
                 {/* Cliente */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
                   <div style={{ position: 'relative' }}>
                     <img
-                      src="https://i.pravatar.cc/100?img=32"
-                      alt="Mariana e João Costa"
+                      src="/../public/images/about/depoimentos-milena.jpeg"
+                      alt="Mirelle Silva"
                       style={{
                         width: '60px',
                         height: '60px',
-                        borderRadius: '50%',
+                        borderRadius: '20%',
                         objectFit: 'cover',
                       }}
                     />
@@ -832,17 +841,17 @@ export default function Home() {
                         position: 'absolute',
                         inset: '-4px',
                         border: '3px solid rgba(245, 199, 201, 0.9)',
-                        borderRadius: '50%',
+                        borderRadius: '20%',
                         pointerEvents: 'none',
                       }}
                     />
                   </div>
                   <div>
                     <p style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
-                      Mariana e João Costa
+                     Mirelle Silva
                     </p>
                     <p style={{ fontSize: 'var(--font-sm)', color: 'var(--neutral-600)' }}>
-                      Ensaio Newborn
+                    Ensaio de Família
                     </p>
                   </div>
                 </div>
@@ -850,7 +859,7 @@ export default function Home() {
                 {/* Link Google Reviews */}
                 <div style={{ marginTop: 'var(--space-4)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--neutral-200)' }}>
                   <a
-                    href="https://www.google.com/maps/place/Fernanda+Rocha+Fotografia"
+                    href="https://www.instagram.com/mirelle_.ss/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -871,7 +880,7 @@ export default function Home() {
                       e.currentTarget.style.gap = '0.375rem';
                     }}
                   >
-                    Ver no Google Reviews →
+                    Ver no Instagram →
                   </a>
                 </div>
               </div>
