@@ -1491,7 +1491,7 @@ Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesqu
  * Retorna caminhos das fotos reais organizadas por categoria
  * NOTE: updated to accept only `category` and return all photos in that category
  */
-function generatePlaceholderPhotos(count: number, category: string): string[] {
+function generatePlaceholderPhotos(_count: number, category: string): string[] {
 
   // Fotos reais por categoria (migradas da pasta SITE/)
   const photoFiles: Record<string, string[]> = {
