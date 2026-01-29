@@ -6,6 +6,34 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useRef, useEffect } from 'react';
+<<<<<<< HEAD
+=======
+
+type KeyNavHandlerProps = {
+  onPrev: () => void;
+  onNext: () => void;
+  onClose: () => void;
+};
+
+function KeyboardNavigationHandler({ onPrev, onNext, onClose }: KeyNavHandlerProps) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        onPrev();
+      } else if (e.key === 'ArrowRight') {
+        onNext();
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [onPrev, onNext, onClose]);
+
+  return null;
+}
+>>>>>>> c08cacb (fix : ajustes finais)
 import type { IconType } from 'react-icons';
 import { Modal } from './Modal';
 import { Button } from './Button';
@@ -21,7 +49,12 @@ export interface ServiceCardProps {
 export function ServiceCard({ title, photos }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageOpen, setIsImageOpen] = useState(false);
+<<<<<<< HEAD
   const [currentImage, setCurrentImage] = useState<string | null>(null);
+=======
+  // store the index of the currently-open image inside the album modal
+  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
+>>>>>>> c08cacb (fix : ajustes finais)
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -126,7 +159,12 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
           style={{
             position: 'absolute',
             inset: 0,
+<<<<<<< HEAD
             backgroundImage: `url(${photos[0]})`,
+=======
+            // Wrap URL in quotes to be safe with filenames containing parentheses
+            backgroundImage: `url("${photos && photos.length ? photos[0] : '/images/hero/hero-background.jpg'}")`,
+>>>>>>> c08cacb (fix : ajustes finais)
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             willChange: 'transform',
@@ -229,7 +267,11 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
                 alt={`${title} - Foto ${index + 1}`}
                 loading="lazy"
                 onClick={() => {
+<<<<<<< HEAD
                   setCurrentImage(photo);
+=======
+                  setCurrentImageIndex(index);
+>>>>>>> c08cacb (fix : ajustes finais)
                   setIsImageOpen(true);
                 }}
                 onError={(e) => {
@@ -261,6 +303,7 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
       </Modal>
 
       {/* Image Lightbox Modal: open when a photo is clicked inside the album modal */}
+<<<<<<< HEAD
       <Modal isOpen={isImageOpen} onClose={() => { setIsImageOpen(false); setCurrentImage(null); }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
           {currentImage && (
@@ -273,6 +316,104 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
           )}
         </div>
       </Modal>
+=======
+      <Modal
+        isOpen={isImageOpen}
+        onClose={() => {
+          setIsImageOpen(false);
+          setCurrentImageIndex(null);
+        }}
+      >
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          {/* Prev / Next buttons */}
+          {typeof currentImageIndex === 'number' && photos.length > 0 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => (prev === null ? null : (prev - 1 + photos.length) % photos.length));
+                }}
+                aria-label="Imagem anterior"
+                style={{
+                  position: 'absolute',
+                  left: '8px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'rgba(0,0,0,0.45)',
+                  color: '#fff',
+                  border: 'none',
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '999px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  zIndex: 4,
+                }}
+              >
+                <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>&lt;</span>
+              </button>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => (prev === null ? null : (prev + 1) % photos.length));
+                }}
+                aria-label="Próxima imagem"
+                style={{
+                  position: 'absolute',
+                  right: '8px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'rgba(0,0,0,0.45)',
+                  color: '#fff',
+                  border: 'none',
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '999px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  zIndex: 4,
+                }}
+              >
+                <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>&gt;</span>
+              </button>
+
+              {/* Index indicator */}
+              <div style={{ position: 'absolute', bottom: '16px', left: '50%', transform: 'translateX(-50%)', color: '#fff', background: 'rgba(0,0,0,0.35)', padding: '6px 10px', borderRadius: '20px', zIndex: 4, fontSize: '0.9rem' }}>
+                {currentImageIndex + 1} / {photos.length}
+              </div>
+
+              {/* The image */}
+              <img
+                src={photos[currentImageIndex]}
+                alt={`${title} - Foto ${currentImageIndex + 1}`}
+                style={{ maxWidth: '90vw', maxHeight: '80vh', objectFit: 'contain', borderRadius: 0 }}
+                onError={(e) => {
+                  console.error('Erro ao carregar imagem da lightbox:', photos[currentImageIndex]);
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop&q=80';
+                }}
+              />
+            </>
+          )}
+        </div>
+      </Modal>
+
+      {/* Keyboard navigation for image lightbox */}
+      {isImageOpen && (
+        <KeyboardNavigationHandler
+          onPrev={() => setCurrentImageIndex((prev) => (prev === null ? null : (prev - 1 + photos.length) % photos.length))}
+          onNext={() => setCurrentImageIndex((prev) => (prev === null ? null : (prev + 1) % photos.length))}
+          onClose={() => {
+            setIsImageOpen(false);
+            setCurrentImageIndex(null);
+          }}
+        />
+      )}
+>>>>>>> c08cacb (fix : ajustes finais)
     </>
   );
 }

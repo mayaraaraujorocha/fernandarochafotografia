@@ -495,11 +495,19 @@ export default function Home() {
             >
               {/* Card 1 - Casais (vertical 3:4) */}
               <div style={{ gridColumn: '1', gridRow: '1 / 4' }}>
+<<<<<<< HEAD
                 <ServiceCard
                   icon={FaHeart}
                   title="Casais"
                   description="Registre o amor e cumplicidade do casal em fotos naturais e autênticas."
                   photos={generatePlaceholderPhotos(10, 'couple')}
+=======
+          <ServiceCard
+                  icon={FaHeart}
+                  title="Casais"
+                  description="Registre o amor e cumplicidade do casal em fotos naturais e autênticas."
+            photos={generatePlaceholderPhotos('couple')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -509,7 +517,11 @@ export default function Home() {
                   icon={FaBaby}
                   title="Gestantes"
                   description="Celebre a espera com fotos que capturam a beleza e emoção da maternidade."
+<<<<<<< HEAD
                   photos={generatePlaceholderPhotos(10, 'pregnant')}
+=======
+                    photos={generatePlaceholderPhotos('pregnant')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -519,7 +531,11 @@ export default function Home() {
                   icon={FaChild}
                   title="Newborn"
                   description="Primeiros dias de vida registrados com delicadeza e carinho."
+<<<<<<< HEAD
                   photos={generatePlaceholderPhotos(10, 'newborn')}
+=======
+                    photos={generatePlaceholderPhotos('newborn')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -529,7 +545,11 @@ export default function Home() {
                   icon={FaBirthdayCake}
                   title="Smash the Cake"
                   description="Primeiro aniversário com diversão, bagunça e muita alegria."
+<<<<<<< HEAD
                   photos={generatePlaceholderPhotos(10, 'smash-cake')}
+=======
+                    photos={generatePlaceholderPhotos('smash-cake')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -537,9 +557,15 @@ export default function Home() {
               <div style={{ gridColumn: '3', gridRow: '5 / 8' }}>
                 <ServiceCard
                   icon={FaCamera}
+<<<<<<< HEAD
                   title="Batizado"
                   description="Celebração especial do batismo, capturando emoções de fé e amor."
                   photos={generatePlaceholderPhotos(10, 'baby-monthly')}
+=======
+                  title="Batizados"
+                  description="Celebração especial do batismo, capturando emoções de fé e amor."
+                  photos={generatePlaceholderPhotos('baby-monthly')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -547,9 +573,15 @@ export default function Home() {
               <div style={{ gridColumn: '1', gridRow: '6 / 8' }}>
                 <ServiceCard
                   icon={FaGift}
+<<<<<<< HEAD
                   title="Nascimento"
                   description="Chá de bebê, chá revelação e celebrações da chegada do bebê."
                   photos={generatePlaceholderPhotos(10, 'baby-shower')}
+=======
+                  title="Nascimentos"
+                  description="Chá de bebê, chá revelação e celebrações da chegada do bebê."
+                  photos={generatePlaceholderPhotos('baby-shower')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -557,9 +589,15 @@ export default function Home() {
               <div style={{ gridColumn: '2', gridRow: '6 / 8' }}>
                 <ServiceCard
                   icon={FaRing}
+<<<<<<< HEAD
                   title="Casamento"
                   description="Do pedido ao grande dia, cada detalhe do seu casamento registrado."
                   photos={generatePlaceholderPhotos(10, 'wedding')}
+=======
+                  title="Casamentos"
+                  description="Do pedido ao grande dia, cada detalhe do seu casamento registrado."
+                  photos={generatePlaceholderPhotos('wedding')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -567,9 +605,15 @@ export default function Home() {
               <div style={{ gridColumn: '1 / 3', gridRow: '8 / 10' }}>
                 <ServiceCard
                   icon={FaStar}
+<<<<<<< HEAD
                   title="Aniversário"
                   description="Festas de aniversário com toda alegria e celebração."
                   photos={generatePlaceholderPhotos(10, 'birthday')}
+=======
+                  title="Aniversários"
+                  description="Festas de aniversário com toda alegria e celebração."
+                    photos={generatePlaceholderPhotos('birthday')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
 
@@ -579,7 +623,11 @@ export default function Home() {
                   icon={FaHome}
                   title="Ensaios de Aniversário"
                   description="Ensaios fotográficos especiais para comemorar seu aniversário."
+<<<<<<< HEAD
                   photos={generatePlaceholderPhotos(10, 'birthday-shoot')}
+=======
+                    photos={generatePlaceholderPhotos('birthday-shoot')}
+>>>>>>> c08cacb (fix : ajustes finais)
                 />
               </div>
             </div>
@@ -1487,8 +1535,14 @@ Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesqu
 // Helper para gerar fotos reais do portfólio
 /**
  * Retorna caminhos das fotos reais organizadas por categoria
+<<<<<<< HEAD
  */
 function generatePlaceholderPhotos(count: number, category: string): string[] {
+=======
+ * NOTE: updated to accept only `category` and return all photos in that category
+ */
+function generatePlaceholderPhotos(category: string): string[] {
+>>>>>>> c08cacb (fix : ajustes finais)
   // Fotos reais por categoria (migradas da pasta SITE/)
   const photoFiles: Record<string, string[]> = {
     couple: [
@@ -1524,10 +1578,17 @@ function generatePlaceholderPhotos(count: number, category: string): string[] {
     ],
 
     newborn: [
+<<<<<<< HEAD
     
       '1.jpg',
       '2.jpg',
       '3.jpg',
+=======
+     '3.jpg',
+      '1.jpg',
+      '2.jpg',
+      
+>>>>>>> c08cacb (fix : ajustes finais)
       '4.jpg',
       '5.jpg',
       '6.jpg',
@@ -1635,10 +1696,17 @@ function generatePlaceholderPhotos(count: number, category: string): string[] {
   };
 
   const folder = folderMap[category] || 'familias';
+<<<<<<< HEAD
   const categoryPhotos = photoFiles[category] || photoFiles.family;
   
   return categoryPhotos.slice(0, count).map(filename => {
     return `/images/portfolio/${folder}/${filename}`;
   });
+=======
+  const categoryPhotos = photoFiles[category] || [];
+
+  // Return all photos for the category (don't artificially limit by `count`)
+  return categoryPhotos.map((filename) => `/images/portfolio/${folder}/${filename}`);
+>>>>>>> c08cacb (fix : ajustes finais)
 }
 
