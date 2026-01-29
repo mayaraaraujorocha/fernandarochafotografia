@@ -710,7 +710,7 @@ Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesqu
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
                   <div style={{ position: 'relative' }}>
                     <img
-                      src="/../public/images/about/depoimentos-livia.jpeg"
+                      src="/../images/about/depoimentos-livia.jpeg"
                       alt="Lívia Cavalcante"
                       style={{
                         width: '60px',
@@ -764,7 +764,7 @@ Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesqu
                       e.currentTarget.style.gap = '0.375rem';
                     }}
                   >
-                    Ver no Instagram →
+                    Instagram →
                   </a>
                 </div>
               </div>
@@ -826,7 +826,7 @@ Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesqu
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
                   <div style={{ position: 'relative' }}>
                     <img
-                      src="/../public/images/about/depoimentos-milena.jpeg"
+                      src="/../images/about/depoimentos-milena.jpeg"
                       alt="Mirelle Silva"
                       style={{
                         width: '60px',
@@ -880,7 +880,7 @@ Você conseguiu transformar um momento simples entre eu e a Lavie em algo inesqu
                       e.currentTarget.style.gap = '0.375rem';
                     }}
                   >
-                    Ver no Instagram →
+                  Instagram →
                   </a>
                 </div>
               </div>
@@ -1503,98 +1503,120 @@ function generatePlaceholderPhotos(count: number, category: string): string[] {
       'IMG_3712.jpg',
     ],
     pregnant: [
-      '1008.jpg',
-      '1032.jpg',
-      '1053.jpg',
-      '1057.jpg',
-      '1058.jpg',
-      'IMG_2544.jpg',
-      'IMG_2555.jpg',
-      'IMG_4004.jpg',
-      'IMG_5568.jpg',
-      'IMG_5613.jpg',
-    ],
-
-    newborn: [
-      '1001.jpg',
-      '1003.jpg',
-      '1018.jpg',
-      'IMG_4189.jpg',
-      'IMG_4257.jpg',
-      'IMG_4424.jpg',
-      'IMG_4438.jpg',
-      'IMG_5252.jpg',
-      'IMG_5292.jpg',
-      'IMG_6215.jpg',
-    ],
-    'baby-monthly': [
-      'capa.jpg',
-      '(1075).jpg',
-      '(1074).jpg',
-      '(1057).jpg',
-      '(1098).jpg',
-      '(1109).jpg',
-      '(1134).jpg',
-      '(1265).jpg',
-    ],
-    'smash-cake': [
-      'IMG_5461.jpg',
-      '(1074).jpg',
-      'IMG_5324.jpg',
-      'IMG_5383.jpg',
-      'IMG_5385.jpg',
-      'IMG_7688.jpg',
-      'IMG_7690.jpg',
-      'IMG_7733.jpg',
-      'IMG_7734.jpg',
-    ],
-    'baby-shower': [
-      '1041.jpg',
-      '1001.jpg',
-      '1005.jpg',
-      '1006.jpg',
-      '1015.jpg',
-      '1017.jpg',
-      '1018.jpg',
-      '1030.jpg',
-      '1032.jpg',
-      '1040.jpg',
-    ],
-    wedding: [
-      '1101.jpg',
-      '1145.jpg',
-      '1164.jpg',
-      '461799205_2517063665144091_6459358390704285832_n.jpg',
-      '461897273_2517063678477423_4892160348851846161_n.jpg',
-      '462466087_2526574010859723_8335929781812483774_n.jpg',
-      '462625826_2526573997526391_6974888551444778871_n.jpg',
-      '462712247_2527433170773807_1277884787182863107_n.jpg',
-      '462718825_2527433264107131_3699975730151117843_n.jpg',
-      '462740053_2527402494110208_4350526521542077937_n.jpg',
-    ],
-    birthday: [
-      '10.jpg',
-      '11.jpg',
-      '12.jpg',
-      '13.jpg',
+       '7.jpg',
       '1.jpg',
       '2.jpg',
       '3.jpg',
       '4.jpg',
       '5.jpg',
       '6.jpg',
+     
+      '8.jpg',
+      '9.jpg',
+      '10.jpg',
+      '11.jpg',
+      '12.jpg',
+      '13.jpg',
+      '14.jpg',
+      '15.jpg',
+      '16.jpg',
+      
+    ],
+
+    newborn: [
+    
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
+      '4.jpg',
+      '5.jpg',
+      '6.jpg',
+     '7.jpg',
+      '8.jpg',
+      '9.jpg',
+      '10.jpg',
+    ],
+    'baby-monthly': [
+       '(4).jpg',
+      '(1).jpg',
+      '(2).jpg',
+      '(3).jpg',
+     
+      '(5).jpg',
+      '(6).jpg',
+     '(7).jpg',
+      '(8).jpg'
+    ],
+    'smash-cake': [
+       '4.jpg',
+     '1.jpg',
+      '2.jpg',
+      '3.jpg',
+     
+      '5.jpg',
+      '6.jpg',
+     '7.jpg',
+      '8.jpg',
+    ],
+    'baby-shower': [
+      '7.jpg', 
+     '1.jpg',
+      '2.jpg',
+      '3.jpg',
+       '4.jpg',
+  '5.jpg',
+      '6.jpg',
+     
+      '8.jpg',
+    ],
+    wedding: [
+      '7.jpg',
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
+      '4.jpg',
+      '5.jpg',
+      '6.jpg',
+      '8.jpg',
+      '9.jpg',
+      '10.jpg',
+      '11.jpg',
+      '12.jpg',
+      '13.jpg',
+      '14.jpg',
+      '15.jpg',
+      '16.jpg',
+    ],
+    birthday: [
+    '(7).jpg',
+       '(1).jpg',
+      '(2).jpg',
+      '(3).jpg',
+         '(4).jpg',
+      '(5).jpg',
+      '(6).jpg',
+     
+      '(8).jpg',
+      '(9).jpg',
+      '(10).jpg',
+      '(11).jpg',
+      '(12).jpg',
+      '(13).jpg',
+      '(14).jpg',
+      '(15).jpg',
+      '(16).jpg'
     ],
     'birthday-shoot': [
-      'capa.jpg',
-      '1019.jpg',
-      
-      '1045.jpg',
-      '1046.jpg',
-      'IMG_6100.jpg',
-      'IMG_6136.jpg',
-      'IMG_6158.jpg',
-      'IMG_6205.jpg',
-      'IMG_6222.jpg',
+       '2.jpg',
+      '1.jpg',
+      '3.jpg',
+      '4.jpg',
+      '5.jpg',
+      '6.jpg',
+      '7.jpg',
+      '8.jpg',
+      '9.jpg',
+      '10.jpg',
     ],
   };
 
