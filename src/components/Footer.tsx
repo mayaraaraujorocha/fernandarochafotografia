@@ -292,11 +292,8 @@ export function Footer() {
         <div className="container">
           <p style={{ fontSize: '0.875rem', color: 'var(--neutral-700)', margin: 0 }}>
             © {new Date().getFullYear()} Fernanda Rocha Fotografia. Todos os direitos reservados.
-<<<<<<< HEAD
-=======
             <br />
-            Desenvolvido por Mayara A. Rocha
->>>>>>> c08cacb (fix : ajustes finais)
+            Desenvolvido por Mayara A. Rocha 
           </p>
         </div>
       </div>

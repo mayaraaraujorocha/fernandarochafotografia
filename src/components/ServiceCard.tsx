@@ -6,8 +6,6 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useRef, useEffect } from 'react';
-<<<<<<< HEAD
-=======
 
 type KeyNavHandlerProps = {
   onPrev: () => void;
@@ -33,7 +31,6 @@ function KeyboardNavigationHandler({ onPrev, onNext, onClose }: KeyNavHandlerPro
 
   return null;
 }
->>>>>>> c08cacb (fix : ajustes finais)
 import type { IconType } from 'react-icons';
 import { Modal } from './Modal';
 import { Button } from './Button';
@@ -49,12 +46,8 @@ export interface ServiceCardProps {
 export function ServiceCard({ title, photos }: ServiceCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isImageOpen, setIsImageOpen] = useState(false);
-<<<<<<< HEAD
-  const [currentImage, setCurrentImage] = useState<string | null>(null);
-=======
   // store the index of the currently-open image inside the album modal
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
->>>>>>> c08cacb (fix : ajustes finais)
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -159,12 +152,8 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
           style={{
             position: 'absolute',
             inset: 0,
-<<<<<<< HEAD
-            backgroundImage: `url(${photos[0]})`,
-=======
             // Wrap URL in quotes to be safe with filenames containing parentheses
             backgroundImage: `url("${photos && photos.length ? photos[0] : '/images/hero/hero-background.jpg'}")`,
->>>>>>> c08cacb (fix : ajustes finais)
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             willChange: 'transform',
@@ -267,11 +256,7 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
                 alt={`${title} - Foto ${index + 1}`}
                 loading="lazy"
                 onClick={() => {
-<<<<<<< HEAD
-                  setCurrentImage(photo);
-=======
                   setCurrentImageIndex(index);
->>>>>>> c08cacb (fix : ajustes finais)
                   setIsImageOpen(true);
                 }}
                 onError={(e) => {
@@ -303,20 +288,6 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
       </Modal>
 
       {/* Image Lightbox Modal: open when a photo is clicked inside the album modal */}
-<<<<<<< HEAD
-      <Modal isOpen={isImageOpen} onClose={() => { setIsImageOpen(false); setCurrentImage(null); }}>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
-          {currentImage && (
-            <img
-              src={currentImage}
-              alt={title}
-              // show image at original size (within viewport limits) without any border or rounding
-              style={{ maxWidth: '90vw', maxHeight: '80vh', objectFit: 'contain', borderRadius: 0 }}
-            />
-          )}
-        </div>
-      </Modal>
-=======
       <Modal
         isOpen={isImageOpen}
         onClose={() => {
@@ -413,7 +384,6 @@ export function ServiceCard({ title, photos }: ServiceCardProps) {
           }}
         />
       )}
->>>>>>> c08cacb (fix : ajustes finais)
     </>
   );
 }
