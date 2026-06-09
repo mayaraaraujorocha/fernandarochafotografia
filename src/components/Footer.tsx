@@ -251,7 +251,7 @@ export function Footer() {
               Contato
             </h4>
             <div style={{ fontSize: '0.95rem', color: 'var(--neutral-700)', lineHeight: 1.8 }}>
-              <p style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: 'var(--spacing-sm)' }}>
+              <p>
              
  <span>
                 
