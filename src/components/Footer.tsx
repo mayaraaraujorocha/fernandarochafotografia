@@ -253,9 +253,9 @@ export function Footer() {
             <div style={{ fontSize: '0.95rem', color: 'var(--neutral-700)', lineHeight: 1.8 }}>
               <p style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: 'var(--spacing-sm)' }}>
                 <FaMapMarkerAlt style={{ marginTop: '0.25rem', flexShrink: 0, color: 'var(--accent-pink)' }} />
-                <span>
-                  AV Ministro Laudo Ferreira de Camargo 229, Sala 4<br />
-                  São Paulo, SP
+ <span>
+                
+            
                 </span>
               </p>
               <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
