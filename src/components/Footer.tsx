@@ -250,7 +250,7 @@ export function Footer() {
             >
               Contato
             </h4>
-            <div style={{ fontSize: '0.95rem', color: 'var(--neutral-700)', lineHeight: 1.8 }}>
+            
               <p>
              
  <span>
@@ -258,6 +258,7 @@ export function Footer() {
             
                 </span>
               </p>
+            <div style={{ fontSize: '0.95rem', color: 'var(--neutral-700)', lineHeight: 1.8 }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <FaWhatsapp style={{ flexShrink: 0, color: 'var(--accent-pink)' }} />
                 <a
